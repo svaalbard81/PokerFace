@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>19/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri May 17 12:54:47 BST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (429 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='model.TestPokerHand.getLowestRankingAceHigh_lowCardTwo_returnsTwo()'><b>getLowestRankingAceHigh_lowCardTwo_returnsTwo</b><br>Test class: model.TestPokerHand</td>
+<td></td>
+<td>0</td>
+<td>model.TestPokerHand@67b100fe</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isFlush_cardsAreFlush_returnsTrue()'><b>isFlush_cardsAreFlush_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isFlush_cardsAreNotFlush_returnsFalse()'><b>isFlush_cardsAreNotFlush_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isFourOfAKind_isFourOfAKind_returnsTrue()'><b>isFourOfAKind_isFourOfAKind_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isFourOfAKind_notFourOfAKind_returnsFalse()'><b>isFourOfAKind_notFourOfAKind_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isRoyalFlush_isRoyalFlush_returnsTrue()'><b>isRoyalFlush_isRoyalFlush_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isRoyalFlush_straightFlushButNotRoyal_returnsFalse()'><b>isRoyalFlush_straightFlushButNotRoyal_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraightFlush_flushButNotStraight_returnsFalse()'><b>isStraightFlush_flushButNotStraight_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraightFlush_isStraightFlush_returnsTrue()'><b>isStraightFlush_isStraightFlush_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraightFlush_nonStraightFlush_returnsFalse()'><b>isStraightFlush_nonStraightFlush_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraightFlush_straightButNotFlush_returnsFalse()'><b>isStraightFlush_straightButNotFlush_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraight_aceHighStraight_returnsTrue()'><b>isStraight_aceHighStraight_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraight_aceLowStraight_returnsTrue()'><b>isStraight_aceLowStraight_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraight_cardsAreNotStraight_returnsFalse()'><b>isStraight_cardsAreNotStraight_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isStraight_simpleMidCardStraight_returnsTrue()'><b>isStraight_simpleMidCardStraight_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isThreeOfAKind_isThreeOfAKind_returnsTrue()'><b>isThreeOfAKind_isThreeOfAKind_returnsTrue</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestPokerHandCalculator.isThreeOfAKind_notThreeOfAKind_returnsFalse()'><b>isThreeOfAKind_notThreeOfAKind_returnsFalse</b><br>Test class: amc.pokerface.TestPokerHandCalculator</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestPokerHandCalculator@44b18fe4</td></tr>
+<tr>
+<td title='amc.pokerface.TestConsecutiveNumberChecker.numbersAreConsecutive_consecutiveList_returnsTrue()'><b>numbersAreConsecutive_consecutiveList_returnsTrue</b><br>Test class: amc.pokerface.TestConsecutiveNumberChecker</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestConsecutiveNumberChecker@320a8ebf</td></tr>
+<tr>
+<td title='amc.pokerface.TestConsecutiveNumberChecker.numbersAreConsecutive_notConsecutive_returnsFalse()'><b>numbersAreConsecutive_notConsecutive_returnsFalse</b><br>Test class: amc.pokerface.TestConsecutiveNumberChecker</td>
+<td></td>
+<td>0</td>
+<td>amc.pokerface.TestConsecutiveNumberChecker@320a8ebf</td></tr>
+</table><p>
+</body>
+</html>

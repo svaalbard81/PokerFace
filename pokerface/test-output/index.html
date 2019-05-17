@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\amccrea\AppData\Local\Temp\testng-eclipse--1626954451\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">19 methods,   19 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="model.TestPokerHand" hash-for-method="getLowestRankingAceHigh_lowCardTwo_returnsTwo">getLowestRankingAceHigh_lowCardTwo_returnsTwo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isFlush_cardsAreFlush_returnsTrue">isFlush_cardsAreFlush_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isFlush_cardsAreNotFlush_returnsFalse">isFlush_cardsAreNotFlush_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isFourOfAKind_isFourOfAKind_returnsTrue">isFourOfAKind_isFourOfAKind_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isFourOfAKind_notFourOfAKind_returnsFalse">isFourOfAKind_notFourOfAKind_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isRoyalFlush_isRoyalFlush_returnsTrue">isRoyalFlush_isRoyalFlush_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isRoyalFlush_straightFlushButNotRoyal_returnsFalse">isRoyalFlush_straightFlushButNotRoyal_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraightFlush_flushButNotStraight_returnsFalse">isStraightFlush_flushButNotStraight_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraightFlush_isStraightFlush_returnsTrue">isStraightFlush_isStraightFlush_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraightFlush_nonStraightFlush_returnsFalse">isStraightFlush_nonStraightFlush_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraightFlush_straightButNotFlush_returnsFalse">isStraightFlush_straightButNotFlush_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraight_aceHighStraight_returnsTrue">isStraight_aceHighStraight_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraight_aceLowStraight_returnsTrue">isStraight_aceLowStraight_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraight_cardsAreNotStraight_returnsFalse">isStraight_cardsAreNotStraight_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isStraight_simpleMidCardStraight_returnsTrue">isStraight_simpleMidCardStraight_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isThreeOfAKind_isThreeOfAKind_returnsTrue">isThreeOfAKind_isThreeOfAKind_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestPokerHandCalculator" hash-for-method="isThreeOfAKind_notThreeOfAKind_returnsFalse">isThreeOfAKind_notThreeOfAKind_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestConsecutiveNumberChecker" hash-for-method="numbersAreConsecutive_consecutiveList_returnsTrue">numbersAreConsecutive_consecutiveList_returnsTrue</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amc.pokerface.TestConsecutiveNumberChecker" hash-for-method="numbersAreConsecutive_notConsecutive_returnsFalse">numbersAreConsecutive_notConsecutive_returnsFalse</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">amc.pokerface.TestPokerHandCalculator</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="isFlush_cardsAreFlush_returnsTrue">
+                  </a> <!-- isFlush_cardsAreFlush_returnsTrue -->
+                  <span class="method-name">isFlush_cardsAreFlush_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isFlush_cardsAreNotFlush_returnsFalse">
+                  </a> <!-- isFlush_cardsAreNotFlush_returnsFalse -->
+                  <span class="method-name">isFlush_cardsAreNotFlush_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isFourOfAKind_isFourOfAKind_returnsTrue">
+                  </a> <!-- isFourOfAKind_isFourOfAKind_returnsTrue -->
+                  <span class="method-name">isFourOfAKind_isFourOfAKind_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isFourOfAKind_notFourOfAKind_returnsFalse">
+                  </a> <!-- isFourOfAKind_notFourOfAKind_returnsFalse -->
+                  <span class="method-name">isFourOfAKind_notFourOfAKind_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isRoyalFlush_isRoyalFlush_returnsTrue">
+                  </a> <!-- isRoyalFlush_isRoyalFlush_returnsTrue -->
+                  <span class="method-name">isRoyalFlush_isRoyalFlush_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isRoyalFlush_straightFlushButNotRoyal_returnsFalse">
+                  </a> <!-- isRoyalFlush_straightFlushButNotRoyal_returnsFalse -->
+                  <span class="method-name">isRoyalFlush_straightFlushButNotRoyal_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraightFlush_flushButNotStraight_returnsFalse">
+                  </a> <!-- isStraightFlush_flushButNotStraight_returnsFalse -->
+                  <span class="method-name">isStraightFlush_flushButNotStraight_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraightFlush_isStraightFlush_returnsTrue">
+                  </a> <!-- isStraightFlush_isStraightFlush_returnsTrue -->
+                  <span class="method-name">isStraightFlush_isStraightFlush_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraightFlush_nonStraightFlush_returnsFalse">
+                  </a> <!-- isStraightFlush_nonStraightFlush_returnsFalse -->
+                  <span class="method-name">isStraightFlush_nonStraightFlush_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraightFlush_straightButNotFlush_returnsFalse">
+                  </a> <!-- isStraightFlush_straightButNotFlush_returnsFalse -->
+                  <span class="method-name">isStraightFlush_straightButNotFlush_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraight_aceHighStraight_returnsTrue">
+                  </a> <!-- isStraight_aceHighStraight_returnsTrue -->
+                  <span class="method-name">isStraight_aceHighStraight_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraight_aceLowStraight_returnsTrue">
+                  </a> <!-- isStraight_aceLowStraight_returnsTrue -->
+                  <span class="method-name">isStraight_aceLowStraight_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraight_cardsAreNotStraight_returnsFalse">
+                  </a> <!-- isStraight_cardsAreNotStraight_returnsFalse -->
+                  <span class="method-name">isStraight_cardsAreNotStraight_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isStraight_simpleMidCardStraight_returnsTrue">
+                  </a> <!-- isStraight_simpleMidCardStraight_returnsTrue -->
+                  <span class="method-name">isStraight_simpleMidCardStraight_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isThreeOfAKind_isThreeOfAKind_returnsTrue">
+                  </a> <!-- isThreeOfAKind_isThreeOfAKind_returnsTrue -->
+                  <span class="method-name">isThreeOfAKind_isThreeOfAKind_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="isThreeOfAKind_notThreeOfAKind_returnsFalse">
+                  </a> <!-- isThreeOfAKind_notThreeOfAKind_returnsFalse -->
+                  <span class="method-name">isThreeOfAKind_notThreeOfAKind_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">amc.pokerface.TestConsecutiveNumberChecker</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="numbersAreConsecutive_consecutiveList_returnsTrue">
+                  </a> <!-- numbersAreConsecutive_consecutiveList_returnsTrue -->
+                  <span class="method-name">numbersAreConsecutive_consecutiveList_returnsTrue</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="numbersAreConsecutive_notConsecutive_returnsFalse">
+                  </a> <!-- numbersAreConsecutive_notConsecutive_returnsFalse -->
+                  <span class="method-name">numbersAreConsecutive_notConsecutive_returnsFalse</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">model.TestPokerHand</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getLowestRankingAceHigh_lowCardTwo_returnsTwo">
+                  </a> <!-- getLowestRankingAceHigh_lowCardTwo_returnsTwo -->
+                  <span class="method-name">getLowestRankingAceHigh_lowCardTwo_returnsTwo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\amccrea\AppData\Local\Temp\testng-eclipse--1626954451\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;amc.pokerface.TestConsecutiveNumberChecker&quot;/&gt;
+      &lt;class name=&quot;model.TestPokerHand&quot;/&gt;
+      &lt;class name=&quot;amc.pokerface.TestPokerHandCalculator&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (3 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(19);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'getLowestRankingAceHigh_lowCardTwo_returnsTwo')
+data.setCell(0, 2, 'model.TestPokerHand')
+data.setCell(0, 3, 97);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'numbersAreConsecutive_consecutiveList_returnsTrue')
+data.setCell(1, 2, 'amc.pokerface.TestConsecutiveNumberChecker')
+data.setCell(1, 3, 29);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'isFlush_cardsAreFlush_returnsTrue')
+data.setCell(2, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(2, 3, 20);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'isFourOfAKind_isFourOfAKind_returnsTrue')
+data.setCell(3, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(3, 3, 11);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'numbersAreConsecutive_notConsecutive_returnsFalse')
+data.setCell(4, 2, 'amc.pokerface.TestConsecutiveNumberChecker')
+data.setCell(4, 3, 9);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'isFlush_cardsAreNotFlush_returnsFalse')
+data.setCell(5, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(5, 3, 9);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'isRoyalFlush_isRoyalFlush_returnsTrue')
+data.setCell(6, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(6, 3, 8);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'isRoyalFlush_straightFlushButNotRoyal_returnsFalse')
+data.setCell(7, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(7, 3, 8);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'isThreeOfAKind_notThreeOfAKind_returnsFalse')
+data.setCell(8, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(8, 3, 7);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'isStraight_cardsAreNotStraight_returnsFalse')
+data.setCell(9, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(9, 3, 4);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'isStraightFlush_flushButNotStraight_returnsFalse')
+data.setCell(10, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(10, 3, 4);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'isStraight_aceHighStraight_returnsTrue')
+data.setCell(11, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(11, 3, 3);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'isStraightFlush_nonStraightFlush_returnsFalse')
+data.setCell(12, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(12, 3, 3);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'isStraightFlush_straightButNotFlush_returnsFalse')
+data.setCell(13, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(13, 3, 2);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'isFourOfAKind_notFourOfAKind_returnsFalse')
+data.setCell(14, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(14, 3, 2);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'isStraight_aceLowStraight_returnsTrue')
+data.setCell(15, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(15, 3, 1);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'isStraightFlush_isStraightFlush_returnsTrue')
+data.setCell(16, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(16, 3, 1);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'isStraight_simpleMidCardStraight_returnsTrue')
+data.setCell(17, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(17, 3, 1);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'isThreeOfAKind_isThreeOfAKind_returnsTrue')
+data.setCell(18, 2, 'amc.pokerface.TestPokerHandCalculator')
+data.setCell(18, 3, 1);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 220 ms</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">amc.pokerface.TestConsecutiveNumberChecker</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">numbersAreConsecutive_consecutiveList_returnsTrue</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">numbersAreConsecutive_notConsecutive_returnsFalse</span>
+                <span class="method-start">41 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">model.TestPokerHand</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">getLowestRankingAceHigh_lowCardTwo_returnsTwo</span>
+                <span class="method-start">59 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">amc.pokerface.TestPokerHandCalculator</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">isFlush_cardsAreFlush_returnsTrue</span>
+                <span class="method-start">161 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isFlush_cardsAreNotFlush_returnsFalse</span>
+                <span class="method-start">190 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isFourOfAKind_isFourOfAKind_returnsTrue</span>
+                <span class="method-start">202 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isFourOfAKind_notFourOfAKind_returnsFalse</span>
+                <span class="method-start">216 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isRoyalFlush_isRoyalFlush_returnsTrue</span>
+                <span class="method-start">225 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isRoyalFlush_straightFlushButNotRoyal_returnsFalse</span>
+                <span class="method-start">241 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraightFlush_flushButNotStraight_returnsFalse</span>
+                <span class="method-start">256 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraightFlush_isStraightFlush_returnsTrue</span>
+                <span class="method-start">274 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraightFlush_nonStraightFlush_returnsFalse</span>
+                <span class="method-start">290 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraightFlush_straightButNotFlush_returnsFalse</span>
+                <span class="method-start">305 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraight_aceHighStraight_returnsTrue</span>
+                <span class="method-start">323 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraight_aceLowStraight_returnsTrue</span>
+                <span class="method-start">334 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraight_cardsAreNotStraight_returnsFalse</span>
+                <span class="method-start">336 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isStraight_simpleMidCardStraight_returnsTrue</span>
+                <span class="method-start">345 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isThreeOfAKind_isThreeOfAKind_returnsTrue</span>
+                <span class="method-start">349 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">isThreeOfAKind_notThreeOfAKind_returnsFalse</span>
+                <span class="method-start">362 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

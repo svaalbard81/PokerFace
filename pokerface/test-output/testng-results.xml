@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="19" passed="19">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="429" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="429" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+      <class name="amc.pokerface.TestConsecutiveNumberChecker">
+        <test-method status="PASS" signature="numbersAreConsecutive_consecutiveList_returnsTrue()[pri:0, instance:amc.pokerface.TestConsecutiveNumberChecker@320a8ebf]" name="numbersAreConsecutive_consecutiveList_returnsTrue" duration-ms="29" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numbersAreConsecutive_consecutiveList_returnsTrue -->
+        <test-method status="PASS" signature="numbersAreConsecutive_notConsecutive_returnsFalse()[pri:0, instance:amc.pokerface.TestConsecutiveNumberChecker@320a8ebf]" name="numbersAreConsecutive_notConsecutive_returnsFalse" duration-ms="9" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numbersAreConsecutive_notConsecutive_returnsFalse -->
+      </class> <!-- amc.pokerface.TestConsecutiveNumberChecker -->
+      <class name="model.TestPokerHand">
+        <test-method status="PASS" signature="getLowestRankingAceHigh_lowCardTwo_returnsTwo()[pri:0, instance:model.TestPokerHand@67b100fe]" name="getLowestRankingAceHigh_lowCardTwo_returnsTwo" duration-ms="97" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getLowestRankingAceHigh_lowCardTwo_returnsTwo -->
+      </class> <!-- model.TestPokerHand -->
+      <class name="amc.pokerface.TestPokerHandCalculator">
+        <test-method status="PASS" signature="isFlush_cardsAreFlush_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isFlush_cardsAreFlush_returnsTrue" duration-ms="20" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isFlush_cardsAreFlush_returnsTrue -->
+        <test-method status="PASS" signature="isFlush_cardsAreNotFlush_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isFlush_cardsAreNotFlush_returnsFalse" duration-ms="9" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isFlush_cardsAreNotFlush_returnsFalse -->
+        <test-method status="PASS" signature="isFourOfAKind_isFourOfAKind_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isFourOfAKind_isFourOfAKind_returnsTrue" duration-ms="11" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isFourOfAKind_isFourOfAKind_returnsTrue -->
+        <test-method status="PASS" signature="isFourOfAKind_notFourOfAKind_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isFourOfAKind_notFourOfAKind_returnsFalse" duration-ms="2" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isFourOfAKind_notFourOfAKind_returnsFalse -->
+        <test-method status="PASS" signature="isRoyalFlush_isRoyalFlush_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isRoyalFlush_isRoyalFlush_returnsTrue" duration-ms="8" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isRoyalFlush_isRoyalFlush_returnsTrue -->
+        <test-method status="PASS" signature="isRoyalFlush_straightFlushButNotRoyal_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isRoyalFlush_straightFlushButNotRoyal_returnsFalse" duration-ms="8" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isRoyalFlush_straightFlushButNotRoyal_returnsFalse -->
+        <test-method status="PASS" signature="isStraightFlush_flushButNotStraight_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraightFlush_flushButNotStraight_returnsFalse" duration-ms="4" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraightFlush_flushButNotStraight_returnsFalse -->
+        <test-method status="PASS" signature="isStraightFlush_isStraightFlush_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraightFlush_isStraightFlush_returnsTrue" duration-ms="1" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraightFlush_isStraightFlush_returnsTrue -->
+        <test-method status="PASS" signature="isStraightFlush_nonStraightFlush_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraightFlush_nonStraightFlush_returnsFalse" duration-ms="3" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraightFlush_nonStraightFlush_returnsFalse -->
+        <test-method status="PASS" signature="isStraightFlush_straightButNotFlush_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraightFlush_straightButNotFlush_returnsFalse" duration-ms="2" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraightFlush_straightButNotFlush_returnsFalse -->
+        <test-method status="PASS" signature="isStraight_aceHighStraight_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraight_aceHighStraight_returnsTrue" duration-ms="3" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraight_aceHighStraight_returnsTrue -->
+        <test-method status="PASS" signature="isStraight_aceLowStraight_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraight_aceLowStraight_returnsTrue" duration-ms="1" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraight_aceLowStraight_returnsTrue -->
+        <test-method status="PASS" signature="isStraight_cardsAreNotStraight_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraight_cardsAreNotStraight_returnsFalse" duration-ms="4" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraight_cardsAreNotStraight_returnsFalse -->
+        <test-method status="PASS" signature="isStraight_simpleMidCardStraight_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isStraight_simpleMidCardStraight_returnsTrue" duration-ms="1" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isStraight_simpleMidCardStraight_returnsTrue -->
+        <test-method status="PASS" signature="isThreeOfAKind_isThreeOfAKind_returnsTrue()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isThreeOfAKind_isThreeOfAKind_returnsTrue" duration-ms="1" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isThreeOfAKind_isThreeOfAKind_returnsTrue -->
+        <test-method status="PASS" signature="isThreeOfAKind_notThreeOfAKind_returnsFalse()[pri:0, instance:amc.pokerface.TestPokerHandCalculator@44b18fe4]" name="isThreeOfAKind_notThreeOfAKind_returnsFalse" duration-ms="7" started-at="2019-05-17T11:54:47Z" finished-at="2019-05-17T11:54:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isThreeOfAKind_notThreeOfAKind_returnsFalse -->
+      </class> <!-- amc.pokerface.TestPokerHandCalculator -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
