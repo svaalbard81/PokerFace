@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import amc.pokerface.enums.CardName;
+import amc.pokerface.enums.PokerHandResult;
 import amc.pokerface.enums.Suite;
 import amc.pokerface.model.PlayingCard;
 import amc.pokerface.model.PokerHand;
@@ -14,6 +15,13 @@ import amc.pokerface.model.PokerHand;
 public class PokerHandCalculator {
 
 	private PokerHandCalculator() {}
+	
+	public static PokerHandResult getPokerHandResult(PokerHand pokerHand) {
+		//TODO:Implement
+		return null;
+		
+	}
+	
 	
 	public static boolean isFlush(PokerHand pokerHand){
 		
@@ -107,7 +115,7 @@ public class PokerHandCalculator {
 		
 	}
 	
-	//TODO:Refactor to get rid of
+	//TODO:Refactor to get rid of - maybe use the method above
 	private static boolean pokerHandContainsNumberOfSameRankedCards(PokerHand pokerHand, int numberOfCardsToCheckFor) {
 		
 		for (CardName cardname: getDistinctCardNamesFromPokerHand(pokerHand)) {
