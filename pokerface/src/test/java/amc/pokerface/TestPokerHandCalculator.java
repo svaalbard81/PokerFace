@@ -268,4 +268,113 @@ public class TestPokerHandCalculator {
 		assertTrue(PokerHandCalculator.isThreeOfAKind(threeOfAKindPokerHand));
 		
 	}
+	
+	@Test
+	public void isPair_noPairs_returnsFalse() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.JACK));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
+		
+		PokerHand noPairsPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertFalse(PokerHandCalculator.isPair(noPairsPokerHand));
+	}
+	
+	@Test
+	public void isPair_isAPair_returnsTrue() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.NINE));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
+		
+		PokerHand pairPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertTrue(PokerHandCalculator.isPair(pairPokerHand));
+		
+	}
+	
+	@Test
+	public void isFullHouse_isPairButNotFullHouse_returnsFalse() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.NINE));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
+		
+		PokerHand pairPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertFalse(PokerHandCalculator.isFullHouse(pairPokerHand));
+	}
+	
+	@Test
+	public void isFullHouse_isThreeOfKindButNotFullHouse_returnsFalse() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
+		
+		PokerHand threeOfAKindPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertFalse(PokerHandCalculator.isFullHouse(threeOfAKindPokerHand));
+	}
+	
+	@Test
+	public void isFullHouse_isFullHouse_returnsTrue() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.SEVEN));
+		
+		PokerHand fullHousePokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertTrue(PokerHandCalculator.isFullHouse(fullHousePokerHand));
+		
+	}
+	
+	@Test
+	public void isTwoPair_isTwoPair_returnsTrue() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.TEN));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.SEVEN));
+		
+		PokerHand twoPairPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertTrue(PokerHandCalculator.isTwoPair(twoPairPokerHand));
+		
+	}
+	
+	@Test
+	public void isTwoPair_isNotTwoPair_returnsFalse() {
+		
+		Set<PlayingCard> cardList = new HashSet<>();
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
+		cardList.add(new PlayingCard(Suite.HEARTS, CardName.SEVEN));
+		
+		PokerHand fullHousePokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		
+		assertFalse(PokerHandCalculator.isTwoPair(fullHousePokerHand));
+		
+	}
 }
