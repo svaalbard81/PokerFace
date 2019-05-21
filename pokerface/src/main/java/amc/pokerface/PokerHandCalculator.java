@@ -17,20 +17,51 @@ public class PokerHandCalculator {
 	private PokerHandCalculator() {}
 	
 	public static PokerHandResult getPokerHandResult(PokerHand pokerHand) {
-		//TODO:Implement
-		return null;
+
+		//TODO:Refactor to stop repeat operations...
+		
+		if (isRoyalFlush(pokerHand)) {
+			return PokerHandResult.ROYAL_FLUSH;
+		}
+		else if (isStraightFlush(pokerHand)) {
+			return PokerHandResult.STRAIGHT_FLUSH;
+		}
+		else if (isFourOfAKind(pokerHand)) {
+			return PokerHandResult.FOUR_OF_A_KIND;
+		}
+		else if (isFullHouse(pokerHand)) {
+			return PokerHandResult.FULL_HOUSE;
+		}
+		else if (isFlush(pokerHand)) {
+			return PokerHandResult.FLUSH;
+		}
+		else if (isStraight(pokerHand)) {
+			return PokerHandResult.STRAIGHT;
+		}
+		else if (isThreeOfAKind(pokerHand)) {
+			return PokerHandResult.THREE_OF_A_KIND;
+		}
+		else if (isTwoPair(pokerHand)) {
+			return PokerHandResult.TWO_PAIR;
+		}
+		else if (isPair(pokerHand)) {
+			return PokerHandResult.PAIR;
+		}
+		else {
+			return PokerHandResult.HIGH_CARD;
+		}
 		
 	}
 	
 	
-	public static boolean isFlush(PokerHand pokerHand){
+	private static boolean isFlush(PokerHand pokerHand){
 		
 		Set<Suite> distinctSuites = pokerHand.getCardsInHand().stream().map(o1 -> o1.getSuite()).collect(Collectors.toSet());
 		return (distinctSuites.size() == 1);
 		
 	}
 	
-	public static boolean isStraight(PokerHand pokerHand) {
+	private static boolean isStraight(PokerHand pokerHand) {
 		
 		Set<CardName> distinctCardNames = getDistinctCardNamesFromPokerHand(pokerHand); 
 		
@@ -52,13 +83,13 @@ public class PokerHandCalculator {
 		
 	}
 	
-	public static boolean isStraightFlush(PokerHand pokerHand) {
+	private static boolean isStraightFlush(PokerHand pokerHand) {
 		
 		return isFlush(pokerHand) && isStraight(pokerHand);
 		
 	}
 	
-	public static boolean isRoyalFlush(PokerHand pokerHand) {
+	private static boolean isRoyalFlush(PokerHand pokerHand) {
 		
 		if (isStraightFlush(pokerHand) && pokerHand.getLowestRankingAceHigh() == CardName.TEN.getBasicCardRank()) {
 			return true;
@@ -68,23 +99,23 @@ public class PokerHandCalculator {
 		
 	}
 
-	public static boolean isFourOfAKind(PokerHand pokerHand) {
+	private static boolean isFourOfAKind(PokerHand pokerHand) {
 		return pokerHandContainsNumberOfSameRankedCards(pokerHand, 4);
 	}
 	
-	public static boolean isThreeOfAKind(PokerHand pokerHand) {
+	private static boolean isThreeOfAKind(PokerHand pokerHand) {
 		return pokerHandContainsNumberOfSameRankedCards(pokerHand, 3);
 	}
 	
-	public static boolean isPair(PokerHand pokerHand) {
+	private static boolean isPair(PokerHand pokerHand) {
 		return pokerHandContainsNumberOfSameRankedCards(pokerHand, 2);
 	}
 	
-	public static boolean isFullHouse(PokerHand pokerHand) {
+	private static boolean isFullHouse(PokerHand pokerHand) {
 		return isPair(pokerHand) && isThreeOfAKind(pokerHand);
 	}
 	
-	public static boolean isTwoPair(PokerHand pokerHand) {
+	private static boolean isTwoPair(PokerHand pokerHand) {
 		
 		Map<CardName, Integer> cardNameAndCardCount = getCardNamesAndCardCounts(pokerHand);
 		int countOfPairs = 0;

@@ -1,7 +1,6 @@
 package amc.pokerface;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,31 +8,31 @@ import java.util.Set;
 import org.testng.annotations.Test;
 
 import amc.pokerface.enums.CardName;
+import amc.pokerface.enums.PokerHandResult;
 import amc.pokerface.enums.PokerHandSize;
 import amc.pokerface.enums.Suite;
 import amc.pokerface.model.PlayingCard;
 import amc.pokerface.model.PokerHand;
 
 public class TestPokerHandCalculator {
-
+	
 	@Test
-	public void isFlush_cardsAreNotFlush_returnsFalse() {
+	public void getPokerHandResult_cardsAreHighCard_returnsHighCard() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.JACK));
+		cardList.add(new PlayingCard(Suite.CLUBS, CardName.JACK));
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
+		cardList.add(new PlayingCard(Suite.SPADES, CardName.THREE));
 		
-		PokerHand nonFlushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		PokerHand highCardPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertFalse(PokerHandCalculator.isFlush(nonFlushPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(highCardPokerHand), PokerHandResult.HIGH_CARD);
 	}
 	
 	@Test
-	public void isFlush_cardsAreFlush_returnsTrue() {
+	public void getPokerHandResult_cardsAreFlush_returnsFlush() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -44,28 +43,11 @@ public class TestPokerHandCalculator {
 		
 		PokerHand flushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isFlush(flushPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(flushPokerHand), PokerHandResult.FLUSH);
 	}
 	
 	@Test
-	public void isStraight_cardsAreNotStraight_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.JACK));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		
-		PokerHand nonStraightPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isStraight(nonStraightPokerHand));
-		
-	}
-	
-	@Test
-	public void isStraight_simpleMidCardStraight_returnsTrue() {
+	public void getPokerHandResult_cardsAreSimpleMidCardStraight_returnsStraight() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -74,14 +56,13 @@ public class TestPokerHandCalculator {
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
 		
-		PokerHand nonStraightPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		PokerHand simpleMidCardStraight = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isStraight(nonStraightPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(simpleMidCardStraight), PokerHandResult.STRAIGHT);
 	}
 	
 	@Test
-	public void isStraight_aceLowStraight_returnsTrue() {
+	public void getPokerHandResult_aceLowStraight_returnsStraight() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.TWO));
@@ -92,11 +73,11 @@ public class TestPokerHandCalculator {
 		
 		PokerHand aceLowStraightPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isStraight(aceLowStraightPokerHand));
+		assertEquals(PokerHandCalculator.getPokerHandResult(aceLowStraightPokerHand), PokerHandResult.STRAIGHT);
 	}
 	
 	@Test
-	public void isStraight_aceHighStraight_returnsTrue() {
+	public void getPokerHandResult_aceHighStraightPokerHand_returnsStraight() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.KING));
@@ -107,59 +88,11 @@ public class TestPokerHandCalculator {
 		
 		PokerHand aceHighStraightPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isStraight(aceHighStraightPokerHand));
+		assertEquals(PokerHandCalculator.getPokerHandResult(aceHighStraightPokerHand), PokerHandResult.STRAIGHT);
 	}
 	
 	@Test
-	public void isStraightFlush_nonStraightFlush_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.TWO));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.ACE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.SEVEN));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		
-		PokerHand nonStraightFlushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isStraightFlush(nonStraightFlushPokerHand));
-		
-	}
-	
-	@Test
-	public void isStraightFlush_straightButNotFlush_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.TWO));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.ACE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		
-		PokerHand straightPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isStraightFlush(straightPokerHand));
-		
-	}
-	
-	@Test
-	public void isStraightFlush_flushButNotStraight_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.TWO));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.ACE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.SEVEN));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		
-		PokerHand flushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isStraightFlush(flushPokerHand));
-		
-	}
-	
-	@Test
-	public void isStraightFlush_isStraightFlush_returnsTrue() {
+	public void getPokerHandResult_cardsAreStraightFlush_returnsStraightFlush() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.TWO));
@@ -170,28 +103,10 @@ public class TestPokerHandCalculator {
 		
 		PokerHand straightFlushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isStraightFlush(straightFlushPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(straightFlushPokerHand), PokerHandResult.STRAIGHT_FLUSH);
 	}
 	
-	@Test
-	public void isRoyalFlush_straightFlushButNotRoyal_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.TWO));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.ACE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		
-		PokerHand straightFlushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isRoyalFlush(straightFlushPokerHand));
-		
-	}
-	
-	@Test
-	public void isRoyalFlush_isRoyalFlush_returnsTrue() {
+	public void getPokerHandResult_cardsAreRoyalFlush_returnsRoyalFlush() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.KING));
@@ -200,30 +115,12 @@ public class TestPokerHandCalculator {
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.QUEEN));
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.JACK));
 		
-		PokerHand straightFlushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
+		PokerHand royalFlushPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isRoyalFlush(straightFlushPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(royalFlushPokerHand), PokerHandResult.ROYAL_FLUSH);
 	}
 	
-	@Test
-	public void isFourOfAKind_notFourOfAKind_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.JACK));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		
-		PokerHand nonFourOfAKindPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isFourOfAKind(nonFourOfAKindPokerHand));
-		
-	}
-	
-	@Test
-	public void isFourOfAKind_isFourOfAKind_returnsTrue() {
+	public void getPokerHandResult_cardsAreFourOfAKind_returnsFourOfAKind() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -234,27 +131,10 @@ public class TestPokerHandCalculator {
 		
 		PokerHand fourOfAKindHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isFourOfAKind(fourOfAKindHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(fourOfAKindHand), PokerHandResult.FOUR_OF_A_KIND);
 	}
 	
-	@Test
-	public void isThreeOfAKind_notThreeOfAKind_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.JACK));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		
-		PokerHand nonThreeOfAKindPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isThreeOfAKind(nonThreeOfAKindPokerHand));
-	}
-	
-	@Test
-	public void isThreeOfAKind_isThreeOfAKind_returnsTrue() {
+	public void getPokerHandResult_cardsAreThreeOfAKind_returnsThreeOfAKind() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -265,27 +145,10 @@ public class TestPokerHandCalculator {
 		
 		PokerHand threeOfAKindPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isThreeOfAKind(threeOfAKindPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(threeOfAKindPokerHand), PokerHandResult.THREE_OF_A_KIND);
 	}
 	
-	@Test
-	public void isPair_noPairs_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FIVE));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.JACK));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.FOUR));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		
-		PokerHand noPairsPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isPair(noPairsPokerHand));
-	}
-	
-	@Test
-	public void isPair_isAPair_returnsTrue() {
+	public void getPokerHandResult_cardsArePair_returnsPair() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -296,42 +159,10 @@ public class TestPokerHandCalculator {
 		
 		PokerHand pairPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isPair(pairPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(pairPokerHand), PokerHandResult.PAIR);
 	}
-	
-	@Test
-	public void isFullHouse_isPairButNotFullHouse_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.CLUBS, CardName.NINE));
-		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		
-		PokerHand pairPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isFullHouse(pairPokerHand));
-	}
-	
-	@Test
-	public void isFullHouse_isThreeOfKindButNotFullHouse_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.CLUBS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.THREE));
-		
-		PokerHand threeOfAKindPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isFullHouse(threeOfAKindPokerHand));
-	}
-	
-	@Test
-	public void isFullHouse_isFullHouse_returnsTrue() {
+
+	public void getPokerHandResult_cardsAreFullHouse_returnsFullHouse() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -342,12 +173,10 @@ public class TestPokerHandCalculator {
 		
 		PokerHand fullHousePokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isFullHouse(fullHousePokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(fullHousePokerHand), PokerHandResult.FULL_HOUSE);
 	}
 	
-	@Test
-	public void isTwoPair_isTwoPair_returnsTrue() {
+	public void getPokerHandResult_cardsAreTwoPair_returnsTwoPair() {
 		
 		Set<PlayingCard> cardList = new HashSet<>();
 		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
@@ -358,23 +187,7 @@ public class TestPokerHandCalculator {
 		
 		PokerHand twoPairPokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
 		
-		assertTrue(PokerHandCalculator.isTwoPair(twoPairPokerHand));
-		
+		assertEquals(PokerHandCalculator.getPokerHandResult(twoPairPokerHand), PokerHandResult.TWO_PAIR);
 	}
 	
-	@Test
-	public void isTwoPair_isNotTwoPair_returnsFalse() {
-		
-		Set<PlayingCard> cardList = new HashSet<>();
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.DIAMONDS, CardName.EIGHT));
-		cardList.add(new PlayingCard(Suite.CLUBS, CardName.SEVEN));
-		cardList.add(new PlayingCard(Suite.SPADES, CardName.SEVEN));
-		cardList.add(new PlayingCard(Suite.HEARTS, CardName.SEVEN));
-		
-		PokerHand fullHousePokerHand = new PokerHand(PokerHandSize.FIVE, cardList);
-		
-		assertFalse(PokerHandCalculator.isTwoPair(fullHousePokerHand));
-		
-	}
 }

@@ -7,6 +7,11 @@ public class ConsecutiveNumberChecker {
 
 	private ConsecutiveNumberChecker() {}
 	
+	/**
+	 * Checks if a list of numbers are consecutive and returns true if they are
+	 * @param numbersToCheck
+	 * @return
+	 */
 	public static boolean numbersAreConsecutive(List<Integer> numbersToCheck) {
 		
 		Collections.sort(numbersToCheck);
