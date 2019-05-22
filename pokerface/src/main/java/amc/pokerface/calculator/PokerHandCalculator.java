@@ -18,8 +18,6 @@ public class PokerHandCalculator {
 	
 	public static PokerHandResult getPokerHandResult(PokerHand pokerHand) {
 
-		//TODO:Refactor to stop repeat operations...
-		
 		if (isRoyalFlush(pokerHand)) {
 			return PokerHandResult.ROYAL_FLUSH;
 		}
@@ -63,7 +61,7 @@ public class PokerHandCalculator {
 	
 	private static boolean isStraight(PokerHand pokerHand) {
 		
-		Set<CardName> distinctCardNames = getDistinctCardNamesFromPokerHand(pokerHand); 
+		Set<CardName> distinctCardNames = pokerHand.getDistinctCardNames(); 
 		
 		if (distinctCardNames.size() == pokerHand.getPokerHandSize().getPokerHandSize()) {
 			
@@ -117,7 +115,7 @@ public class PokerHandCalculator {
 	
 	private static boolean isTwoPair(PokerHand pokerHand) {
 		
-		Map<CardName, Integer> cardNameAndCardCount = getCardNamesAndCardCounts(pokerHand);
+		Map<CardName, Integer> cardNameAndCardCount = pokerHand.getCardNamesAndCounts();
 		int countOfPairs = 0;
 		for (Integer cardCount : cardNameAndCardCount.values()) {
 			if (cardCount == 2) {
@@ -129,27 +127,9 @@ public class PokerHandCalculator {
 		
 	}
 	
-	//TODO:Should I move this to another class?
-	private static Map<CardName, Integer> getCardNamesAndCardCounts(PokerHand pokerHand){
-		
-		Map<CardName, Integer> cardNameAndCardCount = new HashMap<>();
-		for (CardName cardname: getDistinctCardNamesFromPokerHand(pokerHand)) {
-			int countOfCardName = 0;
-			for (PlayingCard card: pokerHand.getCardsInHand()) {
-				if (card.getCardName() == cardname) {
-					countOfCardName ++;
-				}
-			}
-			cardNameAndCardCount.put(cardname, countOfCardName);
-		}
-		return cardNameAndCardCount;
-		
-	}
-	
-	//TODO:Refactor to get rid of - maybe use the method above
 	private static boolean pokerHandContainsNumberOfSameRankedCards(PokerHand pokerHand, int numberOfCardsToCheckFor) {
 		
-		for (CardName cardname: getDistinctCardNamesFromPokerHand(pokerHand)) {
+		for (CardName cardname: pokerHand.getDistinctCardNames()) {
 			
 			int countOfCardName = 0;
 			for (PlayingCard card: pokerHand.getCardsInHand()) {
@@ -167,11 +147,7 @@ public class PokerHandCalculator {
 		return false;
 		
 	}
-		
-	//TODO:Move to different class
-	private static Set<CardName> getDistinctCardNamesFromPokerHand(PokerHand pokerHand){
-		return  pokerHand.getCardsInHand().stream().map(o1 -> o1.getCardName()).collect(Collectors.toSet()); 
-	}
+	
 
 	
 }
