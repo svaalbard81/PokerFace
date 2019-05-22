@@ -1,4 +1,4 @@
-package amc.pokerface;
+package amc.pokerface.calculator;
 
 import static org.testng.Assert.assertEquals;
 
@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.testng.annotations.Test;
 
+import amc.pokerface.calculator.PokerHandCalculator;
 import amc.pokerface.enums.CardName;
 import amc.pokerface.enums.PokerHandResult;
 import amc.pokerface.enums.PokerHandSize;

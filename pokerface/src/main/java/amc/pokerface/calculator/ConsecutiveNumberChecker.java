@@ -1,4 +1,4 @@
-package amc.pokerface;
+package amc.pokerface.calculator;
 
 import java.util.Collections;
 import java.util.List;

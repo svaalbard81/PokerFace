@@ -1,4 +1,4 @@
-package model;
+package amc.pokerface.model;
 
 import static org.testng.Assert.assertEquals;
 
